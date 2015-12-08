@@ -124,11 +124,11 @@ class Webget():
 
         print self.menu
 
-    def meal_format(self):
+    def meal_times(self):
         """
-        Formats the menu into list with three tuples, each tuple representing a meal
+        Formats the menu so that it includes information about meal time
 
-        :returns: list with three tuples of menu items
+        :returns: nothing. Changes self.menu so that it includes meal time information
         """
         pass
 
