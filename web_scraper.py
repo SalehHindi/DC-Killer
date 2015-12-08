@@ -31,7 +31,7 @@ class Webget():
         html file). if it finds 't' then it checks if the next letter is 'o', then 'd', then 'a', etc until it finds
         all of 'today_menu_1'.
 
-        returns: self.menuString ie a string that contains all relevant info for the menu preformatted
+        :returns: self.menuString ie a string that contains all relevant info for the menu preformatted
         """
         self.download = urllib2.urlopen('https://www.haverford.edu/dining-services/dining-center').read()
         self.startString = "today_menu_1"
@@ -61,9 +61,9 @@ class Webget():
         characters removed, to a self.formattedMenu. Note: everything that starts with 'h4>' will be a meal name.
         Everything that starts with 'h3>' is a date.
 
-        returns: list of menu items
+        :returns: list of menu items
         """
-        self.mealPositions=[-1,-1,-1,-1,-1]
+        self.mealPositions=[False]*5
         self.mealNames=['Continental Breakfast', 'Brunch', 'Breakfast', 'Lunch', 'Dinner']
         self.split1=self.preformattedMenu.split('<')
         #for T in self.split1:
@@ -85,37 +85,50 @@ class Webget():
                     break
         print self.mealPositions
 
-        test=[[],[],[],[],[]]
-        testposition=0
         for t in range(len(self.formattedMenu)):
-            breakflag=0
-            for names in self.mealNames:
-                if self.formattedMenu[t] == names:
-                    testposition+=1
+            for n in range(len(self.mealNames)):
+                if self.mealNames[n] == self.formattedMenu[t]:
+                    self.mealPositions[n]=t
 
-            test[testposition].append(self.formattedMenu[t])
+        #TODO: Condense this to make it more elegant of a solution. Low Priority.
+        #TODO: Remove print statements. High priority.
+        for t in range(len(self.formattedMenu)):
+            if (self.mealPositions[0]):
+                print "yup1"
+                if self.mealPositions[0] < t and t < self.mealPositions[1]:
+                    self.menu[self.mealNames[0]].append(self.formattedMenu[t])
+                    print "yup2"
+            elif (self.mealPositions[1]):
+                print "yup3"
+                if self.mealPositions[1] < t and t < self.mealPositions[2]:
+                    self.menu[self.mealNames[1]].append(self.formattedMenu[t])
+                    print "yup4"
+            elif (self.mealPositions[2]):
+                print "yup5"
+                if self.mealPositions[2] < t and t < self.mealPositions[3]:
+                    self.menu[self.mealNames[2]].append(self.formattedMenu[t])
+                    print "yup6"
+            elif (self.mealPositions[3]):
+                print "yup7", self.formattedMenu[t],self.mealPositions[3], t, self.mealPositions[4]
+                if self.mealPositions[3] < t and t < self.mealPositions[4]:
+                    self.menu[self.mealNames[3]].append(self.formattedMenu[t])
+                    print "yup8"
+                #TODO: Add the two lines underneath this to all the if statements. High Priority.
+                if t == self.mealPositions[4]:
+                    self.mealPositions[3]=False
+            elif (self.mealPositions[4]):
+                print "yup9"
+                if self.mealPositions[4] < t and t < len(self.formattedMenu):
+                    self.menu[self.mealNames[4]].append(self.formattedMenu[t])
+                    print "yup10"
 
-        print test
-        #rename variables but otherwise this is finished
-        '''
-        for dictionary in range(len(self.mealNames)):
-            #calculate range of values to draw from formattedMenu
-            start=dictionary
-            for t in range(start, 5-1):
-                if not self.mealPositions[t+1]+1:
-                    end=self.mealPositions[t]
-                    break
-                if self.mealPositions[t+1]+1:
-                    end=self.mealPositions[t+1]
-                    break
-            print start, "\\", end
-            #iterate through those items and add it to
-        '''
+        print self.menu
+
     def meal_format(self):
         """
         Formats the menu into list with three tuples, each tuple representing a meal
 
-        returns: list with three tuples of menu items
+        :returns: list with three tuples of menu items
         """
         pass
 
