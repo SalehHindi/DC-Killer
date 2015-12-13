@@ -5,24 +5,21 @@
 #user. Another potential way is through
 #a push notification to a phone if this
 #was a phone app.
-import twilio.rest import TwilioRestClient
+from twilio.rest import TwilioRestClient
 
 
 class send_SMS():
     """
     Uses Twilio to send an SMS to a given number
     """
-    account_sid = "AC7162b52b47f7383aec3ad400e9cc40e4"
-    auth_token = "c4dbfa0c3ed665fd699eac2f99d4976e"
-    client = TwilioRestClient(account_sid, auth_token)
 
     def __init__(self):
         """
-        Intializes variables
+        Intializes self.client which is responsible for sending and receiving SMS in Twilio
         """
         self.account_sid = "AC7162b52b47f7383aec3ad400e9cc40e4"
         self.auth_token = "c4dbfa0c3ed665fd699eac2f99d4976e"
-        self.client = TwilioRestClient(aself.ccount_sid, self.auth_token)
+        self.client = TwilioRestClient(self.account_sid, self.auth_token)
 
     def send(self, number):
         """
@@ -30,5 +27,10 @@ class send_SMS():
 
         returns: nothing
         """
-        message = client.messages.create(to="+19373295511", from_="+15555555555",
+        self.message = self.client.messages.create(to="+19373295511", from_="+19378136340",
                                      body="Hello there!")
+        self.receivedSMS=self.client.messages.list(To='19378136340')
+        print self.receivedSMS
+
+obj=send_SMS()
+obj.send('+19373295511')
