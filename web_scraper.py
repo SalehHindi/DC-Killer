@@ -1,10 +1,17 @@
-####################################################################
-# This is the portion of the DC Killer program that is responsible for
-# downloading the menu for today, turning the menu into a breakfast,
-# lunch, and dinner section and then returns a dictionary of what is
-# available for that day
-import urllib2
+'''
+This is the portion of the DC Killer program that is responsible for
+downloading the menu for today, turning the menu into a breakfast,
+lunch, and dinner section and then returns a dictionary of what is
+available for that day
+'''
+#TODO: 3 Rewrite the conversion from raw menu format to the nice format (ie {'Continental Breakfast': ['1', '2', '3', '4', '5'], 'Brunch': [], 'Dinner': ['9', '10'], 'Breakfast': ['6', '7', '8'], 'Lunch': []})
+#TODO: 3 Right now the format_menu method returns a sample menu. Make it return an actual menu once the formatting TODO is fixed
+#TODO: 2 Include a time element to self.menu. It could look like {'Dinner': [[Time as string], [item1, item2, item3]] }
+#TODO: 1 Retrieve the menu from the Coop (our on campus cafe)
+#TODO: 1 Retrieve the menu from Lunt Cafe
+#TODO: 1 Retrieve menu from Bryn Mawr Equivalents
 
+import urllib2
 
 class Webget():
     """
@@ -66,8 +73,6 @@ class Webget():
         self.mealPositions=[False]*5
         self.mealNames=['Continental Breakfast', 'Brunch', 'Breakfast', 'Lunch', 'Dinner']
         self.split1=self.preformattedMenu.split('<')
-        #for T in self.split1:
-        #    print T,"\n"*1
 
         for checkItem in self.split1:
             if not checkItem.find('p>') or not checkItem.find('br>') or not checkItem.find('h4>') or not checkItem.find('h3>'):
@@ -90,8 +95,26 @@ class Webget():
                 if self.mealNames[n] == self.formattedMenu[t]:
                     self.mealPositions[n]=t
 
-        #TODO: Condense this to make it more elegant of a solution. Low Priority.
-        #TODO: Remove print statements. High priority.
+        '''
+        # Given ('Continental Breakfast', '1', '2', '3', '4', '5', 'breakfast', '6','7','8', 'dinner', '9', '10')
+        # Turn into {Continental Breakfast: 'sdsdsd', breakfast: sdasd, dinner, ada}
+
+        given = ('Continental Breakfast', '1', '2', '3', '4', '5', 'Breakfast', '6','7','8', 'Dinner', '9', '10')
+        meals = ('Continental Breakfast', 'Breakfast', 'Dinner')
+        menu  = {'Continental Breakfast': [], 'Brunch': [], 'Breakfast': [], 'Lunch': [], 'Dinner': []}
+
+        key=''
+        for items in given:
+            if items in meals:
+                key=items
+            else:
+                menu[key].append(items)
+
+        print menu
+        '''
+
+        #TODO: Replace with the above multiline comment
+        '''
         for t in range(len(self.formattedMenu)):
             if (self.mealPositions[0]):
                 print "yup1"
@@ -123,23 +146,19 @@ class Webget():
                     print "yup10"
 
         print self.menu
-
+        '''
+        return {'Continental Breakfast': ['1', '2', '3', '4', '5'], 'Brunch': [], 'Dinner': ['9', '10'], 'Breakfast': ['6', '7', '8'], 'Lunch': []}
     def meal_times(self):
         """
         Formats the menu so that it includes information about meal time
 
         :returns: nothing. Changes self.menu so that it includes meal time information
         """
+        #TODO: This is part of the TODO about time.
         pass
 
-
-test = Webget()
-test.download_menu()
-test.format_menu()
-
-'''
-Today's menu:
-[
-meal1: [item1,item2,item3],
-meal2: [x,y,z]
-'''
+# The below is how you'd use this class to get the menu for the day.
+#test = Webget()        Create and object from class
+#test.download_menu()   Download Menu into raw data format
+#test.format_menu()     Format menu into easy manipulable format
+#test.meal_times()      Add in the meal times to
