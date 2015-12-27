@@ -20,8 +20,7 @@ will be used to send the SMS message.
 In each file below there is a 'TODO' statement at the top. That, along with the number next to it
 states what needs to get done. The number indicates priority with 3 being highest priority.
 
-web_scraper.py  - Handles retrieving the menu every day and sending the notification. The main file to run.
-
+web_scraper.py  - Handles retrieving the menu every day and sending the notification. The main file to run. \n
 web_frontend.py - Handles everything the user sees.
 
 SMS_backend.py  - Handles all methods associated with notifying the user through Twilio.
