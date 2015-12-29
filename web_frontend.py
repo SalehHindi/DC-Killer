@@ -11,11 +11,11 @@ from flask import *
 app = Flask(__name__)
 #Bootstrap(app)
 
-@app.route("/Haverford/")
+@app.route("/Haverford/", methods=['GET', 'POST'])
 def hello_monkey():
     """Respond to incoming calls with a simple text message."""
 
-    return render_template('base.html', title='Home',)
+    return render_template('index.html', title='Home',)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='127.0.0.1', port=80, debug=True)
