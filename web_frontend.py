@@ -17,7 +17,7 @@ app = Flask(__name__)
 def hello_monkey():
     """Respond to incoming calls with a simple text message."""
 
-    return render_template('index.html', title='Home',)
+    return render_template('index.html', title='Home', menu=DC_menu)
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=80, debug=True)

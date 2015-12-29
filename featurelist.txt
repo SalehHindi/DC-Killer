@@ -1,0 +1,13 @@
+List of future features:
+
+web_scraper.py actually imports a correct menu
+Import menus for Bryn Mawr and specialty locations
+Meal changes color based on if it is currently available
+User database (based on cookies or log in)
+Make Colors look better
+Haverpedia Recipes -- Import the list of recipes from Haverpedia and make it so you can view/add recipes
+    Make it like the google now cards
+Add feedback form on desktop
+Fix "scrollthrough" effect
+Enable push notifications
+Enable SMS reminders

@@ -4,12 +4,11 @@ downloading the menu for today, turning the menu into a breakfast,
 lunch, and dinner section and then returns a dictionary of what is
 available for that day
 '''
-#TODO: 3 Rewrite the conversion from raw menu format to the nice format (ie {'Continental Breakfast': ['1', '2', '3', '4', '5'], 'Brunch': [], 'Dinner': ['9', '10'], 'Breakfast': ['6', '7', '8'], 'Lunch': []})
-#TODO: 3 Right now the format_menu method returns a sample menu. Make it return an actual menu once the formatting TODO is fixed
 #TODO: 2 Include a time element to self.menu. It could look like {'Dinner': [[Time as string], [item1, item2, item3]] }
 #TODO: 1 Retrieve the menu from the Coop (our on campus cafe)
 #TODO: 1 Retrieve the menu from Lunt Cafe
 #TODO: 1 Retrieve menu from Bryn Mawr Equivalents
+#TODO: 1 Make any meals that are currently available (by time) glow
 
 import urllib2
 
@@ -199,18 +198,21 @@ class Webget():
         print len(food)
         for i in range(len(food)):
 
+            # This is the meal name and associate time
             HTML += '<div class="row">\n'
             HTML += '<h3>' + food[i][0] + '</h3>\n'
             HTML += '<h5>' + food[i][1][0] +'</h5>\n'
             HTML += '</div>\n'
 
-            HTML += '<div class="row"">\n'#
-            HTML += '<div class="col-xs-6">\n'##
+            # This is all of the menu items
+            HTML += '<div class="row">\n'#
+            HTML += '<div class="col-xs-8">\n'##
             for j in range(len(food[i][1][1])):
                  HTML += '<h5>' + food[i][1][1][j][0] + '</h5>\n'
             HTML += '</div>\n'
 
-            HTML += '<div class="col-xs-6" align="right">\n'
+            # This is all of the corresponding dietary categories
+            HTML += '<div class="col-xs-4" align="right">\n'
             for j in range(len(food[i][1][1])):
                 HTML += '<h5>' + food[i][1][1][j][1] + '</h5>\n'
             HTML += '</div>\n'##
