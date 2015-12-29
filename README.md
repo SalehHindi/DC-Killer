@@ -20,22 +20,23 @@ will be used to send the SMS message.
 In each file below there is a 'TODO' statement at the top. That, along with the number next to it
 states what needs to get done. The number indicates priority with 3 being highest priority.
 
-web_scraper.py  - Handles retrieving the menu every day and sending the notification. The main file to run.
-web_frontend.py - Handles everything the user sees.
-SMS_backend.py  - Handles all methods associated with notifying the user through Twilio.
-bottle.py       - Web framework for Python (Similar to Flask)
-social.py       - (Planned) Handles all social features. Social creates user stickiness meaning it's there to encourage
+- web_scraper.py  - Handles retrieving the menu every day and sending the notification. The main file to run.
+- web_frontend.py - Handles everything the user sees.
+- SMS_backend.py  - Handles all methods associated with notifying the user through Twilio.
+- bottle.py       - Web framework for Python (Similar to Flask)
+- social.py       - (Planned) Handles all social features. Social creates user stickiness meaning it's there to encourage
                   users to keep using the application.
+                  
 
 #### Dependencies
-Python 2.7
-Bottle (version not clear yet)
+- Python 2.7
+- Bottle (version not clear yet)
 
 #### Potential for Improvement
-The ability to like or favorite foods
-Facebook integration
-The ability to suggest foods your friends like or favorite
-A menu interface that can show the menu being served along with other info like:
+- The ability to like or favorite foods
+- Facebook integration
+- The ability to suggest foods your friends like or favorite
+- A menu interface that can show the menu being served along with other info like:
   Dietary info (Vegan, Vegetarian, Gluten Free, Halal, Kosher)
   Nutritional info (Calorie Count, Ingredients)
 
