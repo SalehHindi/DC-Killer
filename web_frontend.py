@@ -8,8 +8,10 @@ import web_scraper
 from flask import *
 #from flask_bootstrap import Bootstrap
 
+DC_menu=web_scraper.Webget()
+DC_menu=DC_menu.format_to_HTML()
+
 app = Flask(__name__)
-#Bootstrap(app)
 
 @app.route("/Haverford/", methods=['GET', 'POST'])
 def hello_monkey():

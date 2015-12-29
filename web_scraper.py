@@ -19,6 +19,14 @@ class Webget():
     downloading the menu for today, turning the menu into a breakfast,
     lunch, and dinner section and then returns a dictionary of what is
     available for that day.
+
+    Currently it is also responsible for formatting the menu in the proper
+    HTML format. I might divide this class into 4 different classes, one
+    for each Haverford menu, Haffner Menu, Erdman, and specialty menus.
+
+    In the future this will have to import the user database and food
+    database in order to retrieve favorites and category information.
+
     """
 
     def __init__(self):
@@ -148,6 +156,7 @@ class Webget():
         print self.menu
         '''
         return {'Continental Breakfast': ['1', '2', '3', '4', '5'], 'Brunch': [], 'Dinner': ['9', '10'], 'Breakfast': ['6', '7', '8'], 'Lunch': []}
+
     def meal_times(self):
         """
         Formats the menu so that it includes information about meal time
@@ -157,8 +166,62 @@ class Webget():
         #TODO: This is part of the TODO about time.
         pass
 
+    def format_to_HTML(self):
+        # Replace this food with a properly formatted menu
+        food=[
+        ['Brunch', ["7-9am",
+                     [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast vegan', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
+                      ]],
+        ['Lunch', ["11am-2.30pm",
+                     [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
+                      ]],
+        ['Dinner', ["5pm-8pm",
+                     [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
+                      ]]
+        ]
+
+        HTML=''
+        print len(food)
+        for i in range(len(food)):
+
+            HTML += '<div class="row">\n'
+            HTML += '<h3>' + food[i][0] + '</h3>\n'
+            HTML += '<h5>' + food[i][1][0] +'</h5>\n'
+            HTML += '</div>\n'
+
+            HTML += '<div class="row"">\n'#
+            HTML += '<div class="col-xs-6">\n'##
+            for j in range(len(food[i][1][1])):
+                 HTML += '<h5>' + food[i][1][1][j][0] + '</h5>\n'
+            HTML += '</div>\n'
+
+            HTML += '<div class="col-xs-6" align="right">\n'
+            for j in range(len(food[i][1][1])):
+                HTML += '<h5>' + food[i][1][1][j][1] + '</h5>\n'
+            HTML += '</div>\n'##
+            HTML += '</div>\n'#
+        return HTML
+
 # The below is how you'd use this class to get the menu for the day.
 #test = Webget()        Create and object from class
 #test.download_menu()   Download Menu into raw data format
 #test.format_menu()     Format menu into easy manipulable format
-#test.meal_times()      Add in the meal times to
+#test.meal_times()      Add in the meal times to the menu
+#test.food_categories() Add categorization like vegan, vegetarian, etc
+#test.preferences()     Add in if the food is a favorite food
+#test.format_to_HTML()
