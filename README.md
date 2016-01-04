@@ -16,12 +16,12 @@ The program will be a web app that consists of a menu retrieving component that 
 There will be a front end for the user to interact with the program and select foods. There needs to be a notification system which at first will be a text message alert of all the user's favorite foods that are being served that day. If none of the user's likes is being served then maybe it will send a joke, a cute message, or a recipe to suggest something the user hasn't tried. Twilio will be used to send the SMS message. Chrome and Firefox now support neat push notifications.
 
 #### Organization
-In each file below there is a 'TODO' statement at the top. That, along with the number next to it states what needs to get done. The number indicates priority with 3 being highest priority. These are derived from featurelist.txt
+In each file below there is a 'TODO' statement at the top. That, along with the number next to it states what needs to get done. The number indicates priority with 3 being highest priority. These are derived from featurelist.txt 
 
 - web_scraper.py      - Handles retrieving the menu every day and. 
 - web_frontend.py     - Handles everything the user sees. The main program. uses Flask
 - templates/index.html- The main HTML page the user sees to interact with the menu.
-- SMS_backend.py      - Handles all methods associated with notifying the user through Twilio.
+- SMS_backend.py      - Handles all methods associated with notifying the user through Twilio. Uses twilio
 - data.py             - Handles all methods associated with database storage and retrieval. Uses pymongo.
 - featurelist.py      - List of planned features. Used for organization and planning of what to do next.
 - social.py           - (Planned) Handles all social features. Social creates user stickiness.
@@ -36,9 +36,9 @@ In each file below there is a 'TODO' statement at the top. That, along with the 
 - Ngrok-client in order to make the program public facing. Can use alternative tunnel service or server.
 
 #### Status
-Currently the program has a nice frontend and a framework for how to display menu items and meals for Haverford, Bryn Mawr and specialty locations. The buttons aren't tied to any functions but are there just to demonstrate what will soon come.
+Currently the program has a nice frontend and a framework for how to display menu items and meals for Haverford, Bryn Mawr and specialty locations. The buttons aren't tied to any functions but are there so that when I add food data to the database, functionality can commence immediately.
 
-To see the program as it currently stands click the following link. Works in mobile and web.
+To see the program as it currently stands click the following link. Works in mobile and web. 
 http://298dfd26.ngrok.com/Haverford/
 
 #### Future Plans
@@ -50,5 +50,7 @@ User database (based on cookies or log in)
 Add feedback form on desktop
 Enable push notifications
 Enable SMS notifications
+
+Please contact shindi@haverford.edu if you enjoy this, have comments, or questions.
 
   
