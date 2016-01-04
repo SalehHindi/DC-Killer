@@ -37,13 +37,44 @@
 .h-section-cont {
  display: none;
 }
-.button-grid {
- width: 50%;
-  float: right;
-  padding-left: 25%;
-  padding-right: 25%;
+.button-grid1 {
+  float: left;
   display: block;
-  z-index: 1;
+  width: 1px;
+  bottom: 10%;
+  left: 23%;
+  padding-top: 1px;
+  position:absolute;
+  box-sizing: border-box;
+  z-index: 3;
+}
+    .button-grid2 {
+  float: left;
+  display: block;
+  width: 1px;
+  bottom: 10%;
+  left: 47%;
+  padding-top: 1px;
+  position:absolute;
+  box-sizing: border-box;
+  z-index: 3;
+}
+    .button-grid3 {
+  float: left;
+  display: block;
+  width: 1px;
+  bottom: 10%;
+  left: 70%;
+  padding-top: 1px;
+  position:absolute;
+  box-sizing: border-box;
+  z-index: 3;
+}
+.demo-card-wide {
+
+ left: 50%;
+    left:50%;
+    transform:translate(-170px,0%);
 }
 </style>
 
@@ -86,32 +117,29 @@
       </div>
     </section>
     <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-      <div class="page-content"><!-- Your content goes here --></div>
+      <div class="page-content"><!-- Your content goes here -->
+
+      </div>
     </section>
   </main>
 </div>
 <br><br><br><br><br><br><br><br><br><br>
 
-<style>
-  #footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 3;
-}
-  #button-grid {
-
-}
-  </style>
 
 
-<div id="button-grid" class="button-grid">
+<div id="button-grid1" class="button-grid1">
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
   <i class="material-icons">announcement</i>
 </button>
 </div>
 
-<div id="button-grid" class="button-grid">
+<div id="button-grid2" class="button-grid2">
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+  <i class="material-icons">android</i>
+</button>
+</div>
+
+<div id="button-grid3" class="button-grid3">
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
   <i class="material-icons">star</i>
 </button>

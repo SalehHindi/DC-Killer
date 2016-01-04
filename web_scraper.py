@@ -168,7 +168,7 @@ class Webget():
         # TODO: This is part of the TODO about time.
         pass
 
-    def format_to_HTML(self):
+    def format_to_HTML(self, data=None):
         # Replace this food with a properly formatted menu
         food = [
             ['Breakfast', ["7-9am",
@@ -206,7 +206,7 @@ class Webget():
             HTML += '<div id="container"><div id="container" class="demo-card-wide mdl-card mdl-shadow--4dp">\n'
             HTML += '<div class="mdl-card__title">\n'
             HTML += '<h2 class="mdl-card__title-text">' + food[i][0] + '</h2>\n'
-            HTML += '<div id="time" class="mdl-card__subtitle-text">&nbsp;&nbsp;&nbsp;' + food[i][1][0] + '</div>\n'
+            HTML += '<div id="time" class="mdl-card__subtitle-text">' + '&nbsp;'*6 + food[i][1][0] + '</div>\n'
             HTML += '</div>\n'
 
             # This is all of the menu items
@@ -214,23 +214,24 @@ class Webget():
             for j in range(len(food[i][1][1])):
                 #This is where I'd do the if-then for lighting up the menu if it's currently available
                 #Color #4A148C ie primary color
-                HTML += '<font id="xx' \
+                HTML += '<font name="sec" href="javascript:void(0);" onclick="this.style.color="#DD2C00";" id="xx' \
                         + str(i)\
                         + str(j) \
                         +'" size="3" color="#424242">'\
+                        +'<a name="sec" href="javascript:void(0);" onclick="this.style.color=\'#DD2C00\';">' \
                         + food[i][1][1][j][0]\
+                        + '</a>' \
                         + '</font><br><div class="mdl-tooltip" for="xx' \
                         +str(i) \
                         + str(j) \
                         + '">' \
                         +food[i][1][1][j][1] +'</div>'
-
             HTML += '</div>\n'
             HTML += '<div class="mdl-card__actions mdl-card--border">\n'
             HTML += '<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect sh-section-btn">Comment</a>\n'
 
             # This is the place to add comment section (Line below)
-            HTML += '<div class="h-section-cont shw-box">Hello world,'+ 'comments comments<br>'*5 + '<form action="#"><div class="mdl-textfield mdl-js-textfield"><input class="mdl-textfield__input" type="text" id="sample1"><label class="mdl-textfield__label" for="sample1">Type your comment...</label></div></form>' +'</div>\n'
+            HTML += '<div class="h-section-cont shw-box">Hello world!<br>'+ 'comments comments<br>'*5 + '<form action="#"><div class="mdl-textfield mdl-js-textfield"><input class="mdl-textfield__input" type="text" id="sample1"><label class="mdl-textfield__label" for="sample1">Type your comment...</label></div></form>' +'</div>\n'
             HTML += '</div>\n'
             HTML += '<div class="mdl-card__menu">\n'
             HTML += '<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">\n'
