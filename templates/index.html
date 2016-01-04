@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
 
-<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-blue.min.css" />
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
@@ -36,6 +36,14 @@
 <style>
 .h-section-cont {
  display: none;
+}
+.button-grid {
+ width: 50%;
+  float: right;
+  padding-left: 25%;
+  padding-right: 25%;
+  display: block;
+  z-index: 1;
 }
 </style>
 
@@ -91,40 +99,22 @@
     width: 100%;
     z-index: 3;
 }
+  #button-grid {
+
+}
   </style>
 
 
-<div id="footer" class="mdl-grid">
-<div class="mdl-cell mdl-cell--2-col">
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-  <i class="material-icons">pets</i>
-</button>
-</div>
-<div class="mdl-cell mdl-cell--2-col">
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-  <i class="material-icons">language</i>
-</button>
-</div>
-<div class="mdl-cell mdl-cell--2-col">
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-  <i class="material-icons">accessible</i>
-</button>
-</div>
-<div class="mdl-cell mdl-cell--2-col">
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-  <i class="material-icons">android</i>
-</button>
-</div>
-<div class="mdl-cell mdl-cell--2-col">
+<div id="button-grid" class="button-grid">
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
   <i class="material-icons">announcement</i>
 </button>
 </div>
-<div class="mdl-cell mdl-cell--2-col">
+
+<div id="button-grid" class="button-grid">
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
   <i class="material-icons">star</i>
 </button>
-</div>
 </div>
 
     <!-- Bootstrap core JavaScript
