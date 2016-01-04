@@ -1,14 +1,14 @@
-List of future features:
+List of future features in order of priority
 
-web_scraper.py actually imports a correct menu
+web_scraper.py actually imports a correct Haverford menu
 Import menus for Bryn Mawr and specialty locations
-Meal changes color based on if it is currently available
+Meal changes color based on if it is currently ongoing
+Import all nutrition information. The info is currently available in a massively unorganized way. It would be nice to display the nutrition box and ingredients for each food item.
 User database (based on cookies or log in)
-Make Colors look better
-Haverpedia Recipes -- Import the list of recipes from Haverpedia and make it so you can view/add recipes
-    Make it like the google now cards
 Add feedback form on desktop
-Fix "scrollthrough" effect
 Enable push notifications
-Enable SMS reminders
-Enable commenting on meals
+Enable SMS notifications
+
+Long term features:
+import Haverpedia recipes and make a way for users to add their own recipes. Currently Haverpedia is an online wiki that sits somewhere mysterious which contains recipies for the dining halls
+Include Blue Blus integration
