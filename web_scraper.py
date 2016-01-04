@@ -4,13 +4,14 @@ downloading the menu for today, turning the menu into a breakfast,
 lunch, and dinner section and then returns a dictionary of what is
 available for that day
 '''
-#TODO: 2 Include a time element to self.menu. It could look like {'Dinner': [[Time as string], [item1, item2, item3]] }
-#TODO: 1 Retrieve the menu from the Coop (our on campus cafe)
-#TODO: 1 Retrieve the menu from Lunt Cafe
-#TODO: 1 Retrieve menu from Bryn Mawr Equivalents
-#TODO: 1 Make any meals that are currently available (by time) glow
+# TODO: 2 Include a time element to self.menu. It could look like {'Dinner': [[Time as string], [item1, item2, item3]] }
+# TODO: 1 Retrieve the menu from the Coop (our on campus cafe)
+# TODO: 1 Retrieve the menu from Lunt Cafe
+# TODO: 1 Retrieve menu from Bryn Mawr Equivalents
+# TODO: 1 Make any meals that are currently available (by time) glow
 
 import urllib2
+
 
 class Webget():
     """
@@ -64,7 +65,7 @@ class Webget():
             if not self.match:
                 for T in range(1100):
                     self.preformattedMenu += self.download[characterNumber + T]
-                #print self.preformattedMenu
+                # print self.preformattedMenu
                 break
 
     def format_menu(self):
@@ -77,13 +78,14 @@ class Webget():
 
         :returns: list of menu items
         """
-        self.mealPositions=[False]*5
-        self.mealNames=['Continental Breakfast', 'Brunch', 'Breakfast', 'Lunch', 'Dinner']
-        self.split1=self.preformattedMenu.split('<')
+        self.mealPositions = [False] * 5
+        self.mealNames = ['Continental Breakfast', 'Brunch', 'Breakfast', 'Lunch', 'Dinner']
+        self.split1 = self.preformattedMenu.split('<')
 
         for checkItem in self.split1:
-            if not checkItem.find('p>') or not checkItem.find('br>') or not checkItem.find('h4>') or not checkItem.find('h3>'):
-                if checkItem.split('>')[1]!='':
+            if not checkItem.find('p>') or not checkItem.find('br>') or not checkItem.find('h4>') or not checkItem.find(
+                    'h3>'):
+                if checkItem.split('>')[1] != '':
                     self.formattedMenu.append(checkItem.split('>')[1])
 
         del self.formattedMenu[0]
@@ -92,15 +94,15 @@ class Webget():
 
         for t in range(len(self.mealNames)):
             for s in range(len(self.formattedMenu)):
-                if self.formattedMenu[s]==self.mealNames[t]:
-                    self.mealPositions[t]=s
+                if self.formattedMenu[s] == self.mealNames[t]:
+                    self.mealPositions[t] = s
                     break
         print self.mealPositions
 
         for t in range(len(self.formattedMenu)):
             for n in range(len(self.mealNames)):
                 if self.mealNames[n] == self.formattedMenu[t]:
-                    self.mealPositions[n]=t
+                    self.mealPositions[n] = t
 
         '''
         # Given ('Continental Breakfast', '1', '2', '3', '4', '5', 'breakfast', '6','7','8', 'dinner', '9', '10')
@@ -120,7 +122,7 @@ class Webget():
         print menu
         '''
 
-        #TODO: Replace with the above multiline comment
+        # TODO: Replace with the above multiline comment
         '''
         for t in range(len(self.formattedMenu)):
             if (self.mealPositions[0]):
@@ -154,7 +156,8 @@ class Webget():
 
         print self.menu
         '''
-        return {'Continental Breakfast': ['1', '2', '3', '4', '5'], 'Brunch': [], 'Dinner': ['9', '10'], 'Breakfast': ['6', '7', '8'], 'Lunch': []}
+        return {'Continental Breakfast': ['1', '2', '3', '4', '5'], 'Brunch': [], 'Dinner': ['9', '10'],
+                'Breakfast': ['6', '7', '8'], 'Lunch': []}
 
     def meal_times(self):
         """
@@ -162,68 +165,88 @@ class Webget():
 
         :returns: nothing. Changes self.menu so that it includes meal time information
         """
-        #TODO: This is part of the TODO about time.
+        # TODO: This is part of the TODO about time.
         pass
 
     def format_to_HTML(self):
         # Replace this food with a properly formatted menu
-        food=[
-        ['Brunch', ["7-9am",
-                     [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast vegan', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
-                      ]],
-        ['Lunch', ["11am-2.30pm",
-                     [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
-                      ]],
-        ['Dinner', ["5pm-8pm",
-                     [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                      ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
-                      ]]
+        food = [
+            ['Breakfast', ["7-9am",
+                           [['Chocolate Pancakes', 'veg,vgn,meat,hal'],
+                            ['Bagels', 'veg,vgn,meat,hal'],
+                            ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                            ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                            ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                            ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
+                           ]],
+            ['Lunch', ["11am-2.30pm",
+                       [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
+                       ]],
+            ['Dinner', ["5pm-8pm",
+                        [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
+                        ]]
         ]
 
-        HTML=''
+        HTML = ''
         print len(food)
         for i in range(len(food)):
 
             # This is the meal name and associate time
-            HTML += '<div class="row">\n'
-            HTML += '<h3>' + food[i][0] + '</h3>\n'
-            HTML += '<h5>' + food[i][1][0] +'</h5>\n'
+            HTML += '<br><br>\n'
+            HTML += '<div id="container"><div id="container" class="demo-card-wide mdl-card mdl-shadow--4dp">\n'
+            HTML += '<div class="mdl-card__title">\n'
+            HTML += '<h2 class="mdl-card__title-text">' + food[i][0] + '</h2>\n'
+            HTML += '<div id="time" class="mdl-card__subtitle-text">&nbsp;&nbsp;&nbsp;' + food[i][1][0] + '</div>\n'
             HTML += '</div>\n'
 
             # This is all of the menu items
-            HTML += '<div class="row">\n'#
-            HTML += '<div class="col-xs-8">\n'##
+            HTML += '<div class="mdl-card__supporting-text">\n'
             for j in range(len(food[i][1][1])):
-                 HTML += '<h5>' + food[i][1][1][j][0] + '</h5>\n'
-            HTML += '</div>\n'
+                #This is where I'd do the if-then for lighting up the menu if it's currently available
+                #Color #4A148C ie primary color
+                HTML += '<font id="xx' \
+                        + str(i)\
+                        + str(j) \
+                        +'" size="3" color="#424242">'\
+                        + food[i][1][1][j][0]\
+                        + '</font><br><div class="mdl-tooltip" for="xx' \
+                        +str(i) \
+                        + str(j) \
+                        + '">' \
+                        +food[i][1][1][j][1] +'</div>'
 
-            # This is all of the corresponding dietary categories
-            HTML += '<div class="col-xs-4" align="right">\n'
-            for j in range(len(food[i][1][1])):
-                HTML += '<h5>' + food[i][1][1][j][1] + '</h5>\n'
-            HTML += '</div>\n'##
-            HTML += '</div>\n'#
+            HTML += '</div>\n'
+            HTML += '<div class="mdl-card__actions mdl-card--border">\n'
+            HTML += '<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect sh-section-btn">Comment</a>\n'
+
+            # This is the place to add comment section (Line below)
+            HTML += '<div class="h-section-cont shw-box">Hello world,'+ 'comments comments<br>'*5 + '<form action="#"><div class="mdl-textfield mdl-js-textfield"><input class="mdl-textfield__input" type="text" id="sample1"><label class="mdl-textfield__label" for="sample1">Type your comment...</label></div></form>' +'</div>\n'
+            HTML += '</div>\n'
+            HTML += '<div class="mdl-card__menu">\n'
+            HTML += '<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">\n'
+            HTML += '<i class="material-icons">share</i>\n'
+            HTML += '</button>\n'
+            HTML += '</div>\n'
+            HTML += '</div></div>\n'
+            HTML += '<br><br>'
+
         return HTML
 
 # The below is how you'd use this class to get the menu for the day.
-#test = Webget()        Create and object from class
-#test.download_menu()   Download Menu into raw data format
-#test.format_menu()     Format menu into easy manipulable format
-#test.meal_times()      Add in the meal times to the menu
-#test.food_categories() Add categorization like vegan, vegetarian, etc
-#test.preferences()     Add in if the food is a favorite food
-#test.format_to_HTML()
+# test = Webget()        Create and object from class
+# test.download_menu()   Download Menu into raw data format
+# test.format_menu()     Format menu into easy manipulable format
+# test.meal_times()      Add in the meal times to the menu
+# test.food_categories() Add categorization like vegan, vegetarian, etc
+# test.preferences()     Add in if the food is a favorite food
+# test.format_to_HTML()

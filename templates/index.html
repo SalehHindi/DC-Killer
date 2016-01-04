@@ -1,4 +1,3 @@
-<!--TODO: 2 Change from having the files on the CDN provided by bootstrap to hosting it locally -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,16 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
+    <meta name="Social DC Menu" content="">
     <meta name="Saleh Hindi" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>DC Killer</title>
 
     <!-- Bootstrap core CSS -->
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" rel="script" media="screen"></script>
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-blue.min.css" />
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -25,93 +29,109 @@
     <![endif]-->
   </head>
 
-  <body  style="background-color:#BFBA9F">
+  <body  style="background-color:#FFFFFF">
 
-<!--Background Color: BFBA9F-->
+<!--Background Color: FFFFFF-->
 <!--Text Color: 011640-->
+<style>
+.h-section-cont {
+ display: none;
+}
+.button-grid {
+ width: 50%;
+  float: right;
+  padding-left: 25%;
+  padding-right: 25%;
+  display: block;
+  z-index: 1;
+}
+</style>
 
-<div class="navbar-fixed-top">
-    <h1 align="center" style="color:#011640">DC Killer v0.1</h1>
-    <a href="#"  data-toggle="popover" title="HEADER" data-content="Do Re Me">hellowtest</a>
 
-
-    <div class="btn-group btn-group-lg btn-group-justified">
-        <div class="btn-group btn-group-lg">
-            <button type="button" class="btn btn-primary"><font size="2" style="color:#011640">Haverford</font></button>
-        </div>
-        <div class="btn-group btn-group-lg">
-            <button type="button" class="btn btn-primary"><font size="2" style="color:#011640">Haffner</font></button>
-        </div>
-        <div class="btn-group btn-group-lg">
-            <button type="button" class="btn btn-primary"><font size="2" style="color:#011640">Erdman</font></button>
-        </div>
-        <div class="btn-group btn-group-lg">
-            <button type="button" class="btn btn-primary"><font size="2" style="color:#011640">Special</font></button>
-        </div>
+<!-- Simple header with fixed tabs. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+            mdl-layout--fixed-tabs">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">DC Killer Alpha</span>
     </div>
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Haverford</a>
+      <a href="#fixed-tab-2" class="mdl-layout__tab">Haffner</a>
+      <a href="#fixed-tab-3" class="mdl-layout__tab">Erdman</a>
+      <a href="#fixed-tab-3" class="mdl-layout__tab">Special</a>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">©Copyright 2015<br>Saleh Hindi</span>
+  </div>
+  <main class="mdl-layout__content">
+    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+      <div class="page-content"><!-- Here --> {{ menu | safe }} <!-- Here --></div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+      <div class="page-content"><!-- Your content goes here -->
+          <div class='hidden-section-container'>
+      <div class='sh-section-btn'><span>Show</span></div>
+      <div class='h-section-cont shw-box'>
+        <!-- All your text/html below this -->
+
+         <p>All your content here</p>
+
+        <!-- All your text/html above this -->
+      </div>
+    </div>
+      </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+      <div class="page-content"><!-- Your content goes here --></div>
+    </section>
+  </main>
+</div>
+<br><br><br><br><br><br><br><br><br><br>
+
+<style>
+  #footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+}
+  #button-grid {
+
+}
+  </style>
+
+
+<div id="button-grid" class="button-grid">
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+  <i class="material-icons">announcement</i>
+</button>
 </div>
 
-<br><br><br><br><br>
-
-<div class="container">
-    <div style="color:#011640">
-        <h2 align="center">Menu</h2>
-
-<!-- Here -->
-        <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a>
-{{ menu | safe }}
-<!-- Here -->
-    </div>
+<div id="button-grid" class="button-grid">
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+  <i class="material-icons">star</i>
+</button>
 </div>
 
-<br><br><br><br><br>
-
-<div class="footer navbar-fixed-bottom">
-            <div class="btn-group btn-group-lg btn-group-justified">
-                <div class="btn-group btn-group-lg">
-                    <button type="button" class="btn btn-primary"><font size="3" style="color:#011640">Veg</font></button>
-                </div>
-                <div class="btn-group btn-group-lg">
-                    <button type="button" class="btn btn-primary"><font size="3" style="color:#011640">Vgn</font></button>
-                </div>
-                <div class="btn-group btn-group-lg">
-                    <button type="button" class="btn btn-primary"><font size="3" style="color:#011640">Meat</font></button>
-                </div>
-                <div class="btn-group btn-group-lg">
-                    <button type="button" class="btn btn-primary"><font size="3" style="color:#011640">Hal</font></button>
-                </div>
-                <div class="btn-group btn-group-lg">
-                    <button type="button" class="btn btn-primary"><font size="3" style="color:#011640">Kosh</font></button>
-                </div>
-                <div class="btn-group btn-group-lg">
-                    <button type="button" class="btn btn-primary"><font size="3" style="color:#011640">Fav</font></button>
-                </div>
-            </div>
-
-    <div class="row">
-        <div class="btn-group col-xs-12">
-            <button type="button" class="btn btn-primary btn-group col-xs-1"><font size="3" style="color:#011640"><-</font></button>
-            <button type="button" class="btn btn-primary btn-group col-xs-8"><font size="3" style="color:#011640">Sat. Dec 26, 2015</font></button>
-            <button type="button" class="btn btn-primary btn-group col-xs-1"><font size="3" style="color:#011640">-></font></button>
-            <button type="button" class="btn btn-primary btn-group col-xs-2"><font size="3" style="color:#011640">Today</font></button>
-        </div>
-    </div>
-
-</div>
-
-<script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
-});
-</script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <script type='text/javascript'>
+$(document).ready(function(){
+$(".sh-section-btn").on("click",function(){
+$(this).parent().children(".h-section-cont").slideToggle(200);
+});
+});
+</script>
   </body>
 
 </html>

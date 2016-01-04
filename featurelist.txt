@@ -11,3 +11,4 @@ Add feedback form on desktop
 Fix "scrollthrough" effect
 Enable push notifications
 Enable SMS reminders
+Enable commenting on meals
