@@ -169,30 +169,33 @@ class Webget():
 
     def format_to_HTML(self, data=None):
         # Replace this food with a properly formatted menu
+        # Currently, the dining hall is closed so I am using an example menu 'food' but when it opens I will replace with live data.
+        # data should be of the format {'meal': ['time', ['food1', 'food2', 'etc']]}
+
         food = [
             ['Breakfast', ["7-9am",
                            [['Chocolate Pancakes', 'veg,vgn,meat,hal'],
                             ['Bagels', 'veg,vgn,meat,hal'],
-                            ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                            ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                            ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
+                            ['Breaded chicken breast tenderloin', 'veg,vgn,meat,hal'],
+                            ['Vegan Chicken Tenders', 'veg,vgn,meat,hal'],
+                            ['Salad', 'veg,vgn,meat,hal'],
                             ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
                            ]],
             ['Lunch', ["11am-2.30pm",
-                       [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                        ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
+                       [['Gourmet Steak', 'veg,vgn,meat,hal'],
+                        ['Soup de Jour', 'veg,vgn,meat,hal'],
+                        ['Super Sundae Sunday', 'veg,vgn,meat,hal'],
+                        ['Breaded Shark', 'veg,vgn,meat,hal'],
+                        ['Tuna Salad', 'veg,vgn,meat,hal'],
+                        ['Selection of Gourmet Cookies', 'veg,vgn,meat,hal']]
                        ]],
             ['Dinner', ["5pm-8pm",
-                        [['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal'],
-                         ['Breaded chicken breast tenderloid', 'veg,vgn,meat,hal']]
+                        [['Breakfast Bar', 'veg,vgn,meat,hal'],
+                         ['General Tso\' Chicken', 'veg,vgn,meat,hal'],
+                         ['Cuban Sandwhiches', 'veg,vgn,meat,hal'],
+                         ['Other Sandwiches', 'veg,vgn,meat,hal'],
+                         ['Vegan Steak', 'veg,vgn,meat,hal'],
+                         ['Pizza', 'veg,vgn,meat,hal']]
                         ]]
         ]
 
@@ -242,11 +245,17 @@ class Webget():
 
         return HTML
 
-# The below is how you'd use this class to get the menu for the day.
-# test = Webget()        Create and object from class
-# test.download_menu()   Download Menu into raw data format
-# test.format_menu()     Format menu into easy manipulable format
-# test.meal_times()      Add in the meal times to the menu
-# test.food_categories() Add categorization like vegan, vegetarian, etc
-# test.preferences()     Add in if the food is a favorite food
-# test.format_to_HTML()
+'''
+The below is how you'd use this class to get the menu for the day.
+test = Webget()        Create and object from class
+test.download_menu()   Download Menu into raw data format
+test.format_menu()     Format menu into easy manipulable format
+test.meal_times()      Add in the meal times to the menu
+test.nutrition()       Add categorization like vegan, vegetarian, etc, and caloric information
+test.preferences()     Add in if the food is a favorite food. Users will soon be able to favorite foods they like
+test.format_to_HTML()  Output the menu to HTML
+
+There will instead be a self.run() function which does all the above
+The idea is that the menu will update every day at midnight or 1am and change the database as necessary.
+Then when a user visits the site, there will be an updated menu
+'''
