@@ -1,3 +1,9 @@
+"""
+This is the part of the program responsible for all database related operations and data
+"""
+# TODO: 3 Write script that converts nutirition info as in foodbase.txt to a easily manipulatable database format
+# TODO: 3 Generate a food_list document for the DC Collection
+# TODO: 2 Document the design of the database
 import pymongo as mongo
 import datetime
 

@@ -1,8 +1,7 @@
 '''
 This is the portion of the DC Killer program that is responsible for
 downloading the menu for today, turning the menu into a breakfast,
-lunch, and dinner section and then returns a dictionary of what is
-available for that day
+lunch, and dinner section and then append to today's database what is available
 '''
 # TODO: 2 Include a time element to self.menu. It could look like {'Dinner': [[Time as string], [item1, item2, item3]] }
 # TODO: 1 Retrieve the menu from the Coop (our on campus cafe)
