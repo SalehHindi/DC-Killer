@@ -1,53 +1,52 @@
-Aged Cheddar Cheese Bread
-Aged Cheddar Macaroni and Cheese* (Whole Wheat)
-Almond Biscotti V
-Apple Cake (Bakery)
-Apple Cherry Crisp V
-Apple Crunch Muffin
-Apple Oatmeal Crisp V
-Apple Pie V
-Apple Walnut Crumb Cake
-Argentine Steak
-Arroz con Pollo
-Artichoke & Tomato Casserole V
-Asian Rice Casserole V
-Assorted Bagels
-Baby Spinach & Hickory Smoaked Bacon Strata
-Bacon
-Bacon Egg Cheese Bagel
-Bacon Eggs and Cheese Bagel
-Baked Altantic Flounder Barataria
-Baked Swai & Seafood Turbans
-Baked Swai w/ Roasted R. Pepper & Garlic Roulle
-Baked Sweet Potato Salad
-Baked Sweet Potato Wedges V
-Balsamic Marinated London Broil
-Banana Muffin V
-Banana Nut Muffins
-Banana Tea Bread V
-BBQ Pulled Pork Sandwich
-BBQ Vegan Ribs V
-Beef Hot Dogs
-Beef Noodle Soup
-Beef Stew (V)
-Beef Taco
-Belgian Waffles
-Berry Crisp V
-Berry Pancakes
-Black Bean and Rice Burrito V
-Black Bean Burger
-Black Bean, Roasted Butternut and Quinoa V
-Black Forest Cake
-Blackened Turkey London Broil
-Blueberry Muffin V
-Blueberry Muffins
-Braised Napa Cabbage V
-Breaded Chicken Breast Tenderloins
-Breakfast Kielbasa
-Broccoli Florets
-Broccoli Salad
-Broccoli Spears
-Brown Rice V
+Aged Cheddar Cheese Bread,1.txt
+Aged Cheddar Macaroni and Cheese* (Whole Wheat),2.txt
+Almond Biscotti V,3.txt
+Apple Cake (Bakery),4.txt
+Apple Cherry Crisp V,5.txt
+Apple Crunch Muffin,6.txt
+Apple Oatmeal Crisp V,7.txt
+Apple Pie V,8.txt
+Apple Walnut Crumb Cake,9.txt
+Argentine Steak,10.txt
+Arroz con Pollo,11.txt
+Artichoke & Tomato Casserole V,12.txt
+Asian Rice Casserole V,13.txt
+Assorted Bagels,14.txt
+Baby Spinach & Hickory Smoaked Bacon Strata,15.txt
+Bacon,16.txt
+Bacon Egg Cheese Bagel,17.txt
+Baked Altantic Flounder Barataria,18.txt
+Baked Swai & Seafood Turbans,19.txt
+Baked Swai w/ Roasted R. Pepper & Garlic Roulle,20.txt
+Baked Sweet Potato Salad,21.txt
+Baked Sweet Potato Wedges,22.txt
+Balsamic Marinated London Broil,23.txt
+Banana Muffin V,24.txt
+Banana Nut Muffins,25.txt
+Banana Tea Bread V,26.txt
+BBQ Pulled Pork Sandwich,27.txt
+BBQ Vegan Ribs V,28.txt
+Beef Hot Dogs,29.txt
+Beef Noodle Soup,30.txt
+Beef Stew (V),31.txt
+Beef Taco,32.txt
+Belgian Waffles,33.txt
+Berry Crisp V,34.txt
+Berry Pancakes,35.txt
+Black Bean and Rice Burrito V,36.txt
+Black Bean Burger,37.txt
+Black Bean, Roasted Butternut and Quinoa V,38.txt
+Black Forest Cake,39.txt
+Blackened Turkey London Broil,40.txt
+Blueberry Muffin V,41.txt
+Blueberry Muffins,42.txt
+Braised Napa Cabbage V,43.txt
+Breaded Chicken Breast Tenderloins,44.txt
+Breakfast Kielbasa,45.txt
+Broccoli Florets,46.txt
+Broccoli Salad,47.txt
+Broccoli Spears,48.txt
+Brown Rice V,50.txt
 Brown Sugar and Molasses Baked Beans V
 Brown Sugar Glazed Baby Carrots V
 Buttermilk Biscuits
