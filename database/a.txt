@@ -3,7 +3,7 @@ Nutrition Facts
 Serving Size 1 each (44 g)
 Servings Per Container   1
 Amount Per Serving
-Calories 60 Calories from Fat  40
+Calories  60&Calories from Fat  40
  % Daily Value*
 Total Fat   4g 6%
 Saturated Fat  1.5g 7%
