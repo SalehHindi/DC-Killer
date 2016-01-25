@@ -3,7 +3,7 @@
 # TODO: 3 Load ALL of the foods from listoffoods.txt into a new JSON_*.txt file
 # TODO: 3 Add all the files to database
 # TODO: 1 Clean up file so it looks nice
-
+# TODO: 1 Rename to convertscript.py
 class data_converter(object):
     '''
     This file and this class is responsible for converting data formatted like what is in the triple quote
@@ -13,7 +13,7 @@ class data_converter(object):
     Returns: Should create a file named "JSON_X.txt" populated with self.final_food_data
     '''
     def __init__(self, filename=''):
-        self.filename = filename
+        self.filename = 'raw_nutrition_files/' +filename
         #Note: there are 43 keys in self.final_food_data
         self.final_food_data = {"Serving Size ":0,
                               "Servings Per Container ":0,
@@ -79,7 +79,7 @@ class data_converter(object):
         self.pre_format_data = ''
         numbers = '0123456789.'
         datainput = open(self.filename, 'r')
-        dataoutput = open('JSON_'+self.filename, 'w')
+        dataoutput = open('json_files/JSON_'+self.filename, 'w')
 
         for line in datainput.readlines():
             self.pre_format_data += line
@@ -132,8 +132,11 @@ class data_converter(object):
 
         dataoutput.write(str(self.final_food_data))
 
-test = data_converter('a.txt')
-test.convert()
+for i in range(100):
+    fileindex = str(i+1)
+
+    converter_object = data_converter(fileindex + '.txt')
+    converter_object.convert()
 
 
 
