@@ -42,14 +42,14 @@ To see the program as it currently stands click the following link. Works in mob
 http://6380e8bc.ngrok.com/Haverford/
 
 #### Future Plans
-web_scraper.py needs to actually import a correct Haverford menu
-Import menus for Bryn Mawr and specialty locations
-Meal changes color based on if it is currently ongoing
-Import all nutrition information. The info is currently available in a massive$
-User database (based on cookies or log in)
-Add feedback form on desktop
-Enable push notifications
-Enable SMS notifications
+- web_scraper.py needs to actually import a correct Haverford menu
+- Import menus for Bryn Mawr and specialty locations
+- Meal changes color based on if it is currently ongoing
+- User database (based on cookies or log in)
+- Add feedback form on desktop
+- Enable SMS notifications
+
+Currently this project is on pause because I want to focus on contributing to open source projects.
 
 Please contact shindi@haverford.edu if you enjoy this, have comments, or questions.
 
