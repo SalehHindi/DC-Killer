@@ -18,7 +18,7 @@ There will be a front end for the user to interact with the program and select f
 #### Organization
 In each file below there is a 'TODO' statement at the top. That, along with the number next to it states what needs to get done. The number indicates priority with 3 being highest priority. These are derived from featurelist.txt 
 
-- web_scraper.py      - Handles retrieving the menu every day and. 
+- web_scraper.py      - Handles retrieving the menu every day. 
 - web_frontend.py     - Handles everything the user sees. The main program. uses Flask
 - templates/index.html- The main HTML page the user sees to interact with the menu.
 - SMS_backend.py      - Handles all methods associated with notifying the user through Twilio. Uses twilio
